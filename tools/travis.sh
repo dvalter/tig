@@ -2,6 +2,10 @@
 
 set -euo pipefail
 IFS=$'\n\t'
+echo '-----------ENV-----------'
+env
+echo '-----------TTY-----------'
+ls -l /proc/self/fd
 
 build_config_make() {
 	cp contrib/config.make .
