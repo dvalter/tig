@@ -543,7 +543,12 @@ test_require()
 				diff_highlight_path="$(git --exec-path)/../../share/git/contrib/diff-highlight/diff-highlight"
 			fi
 			if [ ! -e "$diff_highlight_path" ]; then
+				# alt path
+				diff_highlight_path="$(git --exec-path)/../../share/git/diff-highlight/diff-highlight"
+			fi
+			if [ ! -e "$diff_highlight_path" ]; then
 				test_skip "The test requires diff-highlight, usually found in share/git-core-contrib"
+				find /usr/share -name diff-highlight
 			fi
 			;;
 		readline)
